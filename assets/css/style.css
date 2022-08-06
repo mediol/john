@@ -30,23 +30,44 @@ body {
 .john_photo {
   display: inline-block;
   position: relative;
-  top: 9px;
-  left: -4px;
-  background: #EDF7FA;
-  border-radius: 50%;
 }
 @media (min-width: 768px) {
   .john_photo {
     width: 50%;
   }
 }
-.john_photo_img {
+.john_photo::after {
+  content: "";
   display: block;
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: 9px;
+  left: calc(50% - 85px);
+  background: #EDF7FA;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .john_photo::after {
+    height: 243px;
+    width: 243px;
+    left: calc(50% - 121px);
+  }
+}
+.john_photo_img {
+  display: inline-block;
   height: 170px;
   width: 170px;
   position: relative;
   top: -9px;
   left: 4px;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .john_photo_img {
+    height: 243px;
+    width: 243px;
+  }
 }
 @media (min-width: 768px) {
   .john_info {

@@ -41,21 +41,38 @@ body {
     &_photo {
         display: inline-block;
         position: relative;
-        top: 9px;
-        left: -4px;
-        background: $bgColor;
-        border-radius: 50%;
         @media (min-width: 768px) {
             width: 50%;
         }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 170px;
+            width: 170px;
+            top: 9px;
+            left: calc(50% - 85px);
+            background: $bgColor;
+            border-radius: 50%;
+            @media (min-width: 768px) {
+                height: 243px;
+                width: 243px;
+                left: calc(50% - 121px);
+            }
+        }
 
         &_img {
-            display: block;
+            display: inline-block;
             height: 170px;
             width: 170px;
             position: relative;
             top: -9px;
             left: 4px;
+            z-index: 2;
+            @media (min-width: 768px) {
+                height: 243px;
+                width: 243px;
+            }
         }
     }
 
