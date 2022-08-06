@@ -12,3 +12,16 @@ body {
     font-family: $font;
     color: #21243D;
 }
+
+// section john
+.john {
+    text-align: center;
+
+    &_photo {
+        display: inline-block;
+
+        &_img {
+            display: block;
+        }
+    }
+}

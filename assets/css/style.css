@@ -7,3 +7,13 @@ body {
   font-family: "Heebo";
   color: #21243D;
 }
+
+.john {
+  text-align: center;
+}
+.john_photo {
+  display: inline-block;
+}
+.john_photo_img {
+  display: block;
+}
