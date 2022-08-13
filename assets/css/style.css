@@ -13,6 +13,8 @@ body {
 .container {
   padding-left: 20px;
   padding-right: 20px;
+  margin: 0 auto;
+  width: 900px;
 }
 
 .header {
@@ -79,6 +81,7 @@ body {
 @media (min-width: 768px) {
   .john_info {
     width: 50%;
+    text-align: left;
   }
 }
 .john_title {
@@ -87,6 +90,11 @@ body {
   margin: 34px 0 21px;
   padding-left: 12px;
   padding-right: 12px;
+}
+@media (min-width: 768px) {
+  .john_title {
+    padding: 0;
+  }
 }
 .john_subtitle {
   margin: 0;
