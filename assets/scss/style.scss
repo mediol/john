@@ -4,7 +4,23 @@ $btnColor: #FF6464;
 $bgColor: #EDF7FA;
 
 // mixins
+@mixin workItem ($width, $fld) {
+    width: $width;
+    display: flex;
+    flex-direction: $fld;
+    gap: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 31px;
 
+    h3 {
+        margin: 0 0 20px;
+    }
+
+    p {
+        margin: 20px 0 0;
+    }
+}
 
 // global styles
 * {
@@ -143,5 +159,33 @@ body {
             box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
             border-radius: 4px;
         }
+    }
+}
+
+// works
+.works {
+
+    .work_list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
+
+    .work_list_item {
+        @include workItem(calc(50% - 15px), column);
+
+        img {
+            filter: grayscale(1);
+            &:hover {
+                fill: unset;
+            }
+        }
+    }
+
+    .work_list_item:first-child {
+        @include workItem(100%, row);
     }
 }
