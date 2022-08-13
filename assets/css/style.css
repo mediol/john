@@ -15,6 +15,13 @@ body {
   padding-right: 20px;
 }
 
+.header {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
 .john {
   text-align: center;
   height: 100vh;
