@@ -4,23 +4,23 @@ $btnColor: #FF6464;
 $bgColor: #EDF7FA;
 
 // mixins
-@mixin workItem ($width, $fld) {
-    width: $width;
-    display: flex;
-    flex-direction: $fld;
-    gap: 18px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #E0E0E0;
-    margin-bottom: 31px;
+// @mixin workItem ($width, $fld) {
+//     width: $width;
+//     display: flex;
+//     flex-direction: $fld;
+//     gap: 18px;
+//     padding-bottom: 15px;
+//     border-bottom: 1px solid #E0E0E0;
+//     margin-bottom: 31px;
 
-    h3 {
-        margin: 0 0 20px;
-    }
+//     h3 {
+//         margin: 0 0 20px;
+//     }
 
-    p {
-        margin: 20px 0 0;
-    }
-}
+//     p {
+//         margin: 20px 0 0;
+//     }
+// }
 
 // global styles
 * {
@@ -141,23 +141,51 @@ body {
     padding: 32px 0;
 
     .container {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h2 {
+            text-align: center;
+            @media (min-width: 768px) {
+                text-align: unset;
+            }
+        }
+
+        & > a {
+            display: none;
+            @media (min-width: 768px) {
+                display: block;
+            }
+        }
     }
 
     &_posts {
-        width: 100%;
-        display: flex;
-        gap: 20px;
+        @media (min-width: 768px) {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+        }
 
         &_article {
-            flex-grow: 1;
-            padding: 24px 22px;
             background: #FFFFFF;
             box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
             border-radius: 4px;
+            padding: 12px 20px;
+            @media (min-width: 768px) {
+                flex-grow: 1;
+                padding: 24px 22px;
+            }
+
+            &:first-child {
+                margin-bottom: 17px;
+                @media (min-width: 768px) {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 }
@@ -169,23 +197,28 @@ body {
         list-style: none;
         padding-left: 0;
         margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 30px;
     }
 
     .work_list_item {
-        @include workItem(calc(50% - 15px), column);
+        padding-bottom: 15px;
+        border-bottom: 1px solid #E0E0E0;
+        margin-bottom: 31px;
+        @media (min-width: 768px) {
+            display: flex;
+            gap: 18px;
+        }
 
         img {
-            filter: grayscale(1);
-            &:hover {
-                fill: unset;
-            }
+            display: block;
+            width: 100%;
         }
-    }
 
-    .work_list_item:first-child {
-        @include workItem(100%, row);
+        h3 {
+            margin: 0 0 20px;
+        }
+
+        p {
+            margin: 20px 0 0;
+        }
     }
 }
